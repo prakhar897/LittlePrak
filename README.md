@@ -1,65 +1,52 @@
-# littleprak README
+# LittlePrak
 
-This is the README for your extension "littleprak". After writing up a brief description, we recommend including the following sections.
+![LittlePrak Logo](/images/littlePrak_logo.png)
+
+[GitHub](https://github.com/prakhar897) [Twitter](https://github.com/prakhar897) [Discord](https://github.com/prakhar897)
+
+## Demo
+
+![Little Prak Logo](/images/littlePrak_logo.png)
+
+## Overview
+
+**LittlePrak** is a Visual Studio Code (VS Code) extension designed to enhance your coding experience by providing intelligent autocompletions using Local LLM Models. This extension aims to streamline your coding workflow and boost your productivity by suggesting contextually relevant code snippets, function calls, and variable names as you type.
+
+Local LLama is an advanced code analysis tool that leverages machine learning techniques to understand the structure and patterns within your codebase. It can accurately predict the next piece of code you are likely to write based on the context you're working in.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Smart Autocompletions**: littlePrak offers intelligent autocompletions that adapt to your coding style and the specific project you're working on. It suggests relevant code snippets, function names, and variable names, making coding faster and more efficient.
 
-For example if there is an image subfolder under your extension project workspace:
+- **Context-Aware Suggestions**: The autocompletions are contextually aware and take into account the surrounding code, imported libraries, and your coding history. This ensures that the suggestions are accurate and aligned with your coding needs.
 
-\!\[feature X\]\(images/feature-x.png\)
+- **Local LLama Integration**: littlePrak harnesses the power of Local LLama's advanced code analysis capabilities. The extension communicates with the Local LLama server running locally to provide real-time autocompletions based on the analysis of your codebase.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Getting Started
 
-## Requirements
+Follow these steps to start using littlePrak with Local LLama:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1. Install the littlePrak extension from the VS Code Marketplace.
+2. Currently the project is only available using the [dalai]() platform. In future, it will support all Llamas.
+3. Install and run dalai server using [these instructions]().
+4. Open your project in VS Code and start coding.
 
-## Extension Settings
+## Configuration
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+You can configure littlePrak to suit your preferences. To access the configuration settings, navigate to `File` > `Preferences` > `Settings` and search for "littlePrak". Here, you can adjust settings related to autocompletion behavior, suggestion frequency, and more.
 
-For example:
+## Roadmap
 
-This extension contributes the following settings:
+1. Create an MVP using dalai server. [WIP]
+2. Integrate oobagooba server api.
+3. Add more configurations options.
+4. Integrate options for remote servers.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Feedback and Support
 
-## Known Issues
+We value your feedback and are committed to improving your experience with littlePrak. If you encounter any issues, have suggestions for improvements, or want to share your success stories, please reach out to us through the [issue tracker](https://github.com/LittlePrak/issues).
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
-## Release Notes
+## License
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This project is licensed under the [MIT License](LICENSE).
