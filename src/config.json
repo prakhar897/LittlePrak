@@ -1,0 +1,30 @@
+{
+    "terminalName": "littlePrak-dalai-terminal",
+    "existingTerminalPID": null,
+    "resetPrompt": {
+        "prompt": "",
+        "promptNewLines": 0,
+        "token": "",
+        "generating": false,
+        "newLinesInARow": 0,
+        "displayed":false
+    },
+    "currentPrompt": {
+        "prompt": "",
+        "promptNewLines": 0,
+        "token": "",
+        "generating": false,
+        "newLinesInARow": 0,
+        "displayed":false
+    },
+    "dalaiModelConfig": {
+		"n_predict": 50,
+		"top_k": 20,
+		"top_p": 0.9,
+		"repeat_last_n": 5,
+		"repeat_penalty": 1.5,
+		"temp": 0.5,
+		"model": "llama.7B",
+		"threads": 4
+	}
+}

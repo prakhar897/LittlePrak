@@ -1,4 +1,6 @@
 const vscode = require('vscode');
+const config = require('../config.json');
+
 
 const getTerminalByName = (terminalName) => {
   var terminal = vscode.window.terminals.find(
@@ -8,9 +10,9 @@ const getTerminalByName = (terminalName) => {
   return terminal;
 }
 
-const startLittlePrakTerminal = async (globalState) => {
+const startLittlePrakTerminal = async () => {
 
-  let terminalName = globalState.get('terminalName');
+  let terminalName = config['terminalName'];
 
   var existingTerminal = getTerminalByName(terminalName);
 
@@ -19,13 +21,14 @@ const startLittlePrakTerminal = async (globalState) => {
     await new Promise(resolve => setTimeout(resolve, 1000)); // Delay 1 sec so that the terminal can start
   }
 
-  if (!globalState.get("existingTerminalPID")) {
+  if (!config["existingTerminalPID"]) {
     await existingTerminal.processId.then((pid) => {
-      globalState.update("existingTerminalPID:",pid);
+      config["existingTerminalPID"] = pid;
     });
   }
 }
 
+// TODO: Check if this code works properly
 const handleLittlePrakTerminalClosure = () => {
   // Handle closure
   vscode.window.onDidCloseTerminal((closedTerminal) => {
@@ -44,35 +47,7 @@ const handleLittlePrakTerminalClosure = () => {
   });
 }
 
-const setMaybeExistingTerminal = () => {
-  existingTerminal = vscode.window.terminals.find(
-      (t) => t.name === terminalName
-  );
-
-  if (existingTerminal) {
-      if (!serverProcessId) {
-          existingTerminal.processId.then((pid) => {
-              serverProcessId = pid;
-          });
-      }
-      return existingTerminal;
-  } else {
-      vscode.window
-          .showErrorMessage("Can't reach Dalai server. Restart local server?", {
-              title: "Restart",
-              action: "restartServer",
-          })
-          .then((selection) => {
-              if (selection?.action === "restartServer") {
-                  vscode.commands.executeCommand("littlePrak.startDalai");
-              }
-          });
-      return false;
-  }
-};
-
 module.exports = {
-  setMaybeExistingTerminal,
   startLittlePrakTerminal, 
   handleLittlePrakTerminalClosure,
   getTerminalByName

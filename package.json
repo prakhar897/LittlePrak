@@ -23,13 +23,17 @@
       {
         "command": "littlePrak.generateSuggestions",
         "title": "Generate Suggestions"
+      },
+      {
+        "command": "littlePrak.completeSuggestion",
+        "title": "Complete Suggestion"
       }
     ],
     "keybindings": [
       {
-        "command": "littlePrak.commentToCode",
-        "key": "ctrl+alt+c",
-        "mac": "cmd+alt+c",
+        "command": "littlePrak.completeSuggestion",
+        "key": "tab",
+        "mac": "tab",
         "when": "editorTextFocus && !editorReadonly"
       }
     ]

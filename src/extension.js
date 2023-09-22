@@ -1,11 +1,7 @@
 const { registerCommands } = require("./commands/register_commands");
-const { initializeGlobalState } = require("./utils/misc_utils");
+const { setupSocket } = require("./services/sockets");
 
-const config = {
-  terminalName: "littlePrak-dalai-terminal",
-  existingTerminal: null,
-  existingTerminalPID: null
-};
+
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -13,9 +9,8 @@ const config = {
 async function activate(context) {
   console.log('Congratulations, your extension "littleprak" is now active!');
 
-  initializeGlobalState(config, context.globalState);
-
-  registerCommands(context);
+  await setupSocket();
+  await registerCommands(context);
 }
 
 function deactivate() {
