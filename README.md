@@ -4,7 +4,7 @@
 
 ## Demo
 
-![LittlePrak Demo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.meowingtons.com%2Fblogs%2Flolcats%2F12-perfect-loop-cat-gifs&psig=AOvVaw0BxhefH52gYSRBsXkM-VcI&ust=1695508139077000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCOCytpSiv4EDFQAAAAAdAAAAABAE)
+![LittlePrak Demo](./assets/demo.mp4)
 
 ## Overview
 

@@ -32,16 +32,16 @@ function registerCommands(context) {
 		showSuggestion('ABC\n\ndef\nijk')
 	);
 
-	let disposableAutoSuggest = vscode.workspace.onDidChangeTextDocument((event) => {
-        // Check if it's a text document change
-        if (event.contentChanges.length > 0) {
-            // Execute your command here
-            vscode.window.showInformationMessage('Command executed on keystroke');
-			//generateSuggestions();
-        }
-    });
+	// let disposableAutoSuggest = vscode.workspace.onDidChangeTextDocument((event) => {
+  //       // Check if it's a text document change
+  //       if (event.contentChanges.length > 0) {
+  //           // Execute your command here
+  //           vscode.window.showInformationMessage('Command executed on keystroke');
+	// 		//generateSuggestions();
+  //       }
+  //   });
 
-    context.subscriptions.push(disposableAutoSuggest);
+  //   context.subscriptions.push(disposableAutoSuggest);
 
 	context.subscriptions.push(disposibleStartServer);
 	context.subscriptions.push(disposibleStopServer);

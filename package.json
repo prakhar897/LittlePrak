@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "https://github.com/prakhar897/LittlePrak"
 	},
-	"icon": "./icon.png",
+	"icon": "./assets/icon.png",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.82.0"
@@ -20,23 +20,23 @@
 		"commands": [
 			{
 				"command": "littlePrak.startDalai",
-				"title": "Start LittlePrak LLAMA Server"
+				"title": "Start LittlePrak Server"
 			},
 			{
 				"command": "littlePrak.stopDalai",
-				"title": "Stop LittlePrak LLAMA Server"
+				"title": "Stop LittlePrak Server"
 			},
 			{
 				"command": "littlePrak.generateSuggestions",
-				"title": "Generate Suggestions"
+				"title": "LittlePrak - Generate Suggestions"
 			},
 			{
 				"command": "littlePrak.completeSuggestion",
-				"title": "Complete Suggestion"
+				"title": "LittlePrak - Complete Suggestion"
 			},
 			{
 				"command": "littlePrak.dev",
-				"title": "Little Prak SandBox"
+				"title": "LittlePrak - SandBox"
 			}
 		],
 		"keybindings": [
