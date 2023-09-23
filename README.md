@@ -4,7 +4,7 @@
 
 ## Demo
 
-![LittlePrak Demo](./assets/demo.mp4)
+![LittlePrak Demo](./assets/demo.gif)
 
 ## Overview
 
@@ -48,7 +48,7 @@ You can configure littlePrak to suit your preferences. To access the configurati
 
 ## Roadmap
 
-1. Create an MVP using dalai server. [WIP]
+1. Create an MVP using dalai  server. [WIP]
 2. Integrate oobagooba server api.
 3. Add more configurations options.
 4. Integrate options for remote servers.
