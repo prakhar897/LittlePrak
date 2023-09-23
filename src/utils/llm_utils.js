@@ -19,7 +19,9 @@ const createLLMPromptForGeneratingSuggestion = (input) => {
   const editor = vscode.window.activeTextEditor;
   const language = editor.document.languageId;
 
-  return `Complete the following ${language} code:\n\\begin{code}\n${input.trim()}`;
+  let prompt =  `Complete the following ${language} code:` + input;
+  console.log("Dalai Prompt:" , prompt);
+  return prompt;
 };
 
 module.exports = {

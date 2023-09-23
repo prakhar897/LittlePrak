@@ -29,7 +29,15 @@ const getTextFromCurrentAndPreviousTwoLines = () => {
       (l) => !!l && l.text
   );
 
-  return lines.join("\n");
+  let text = "";
+  lines.forEach((line) => {
+    if(line != false){
+      text += line; 
+      text += "\n";
+    }
+  })
+
+  return text;
 }
 
 const escapeNewLine = (arg) => {
@@ -52,32 +60,44 @@ const sanitizeText = (text) => {
 	return escapeNewLine(escapeDoubleQuotes(text));
 };
 
-const showSuggestion = (text) => {
+const showSuggestion = async  (text) => {
+   
   console.log("Showing this as suggestion: " + text);
 	const editor = vscode.window.activeTextEditor;
 	if (editor) {
-		const position = editor.selection.active;
 
-		// Define the range for the decoration
-		const range = new vscode.Range(position, position);
+    var lines = text.split("\n");
+    let cursorLine = editor.selection.active.line;
+    let cursorCharacter = editor.selection.active.character;
+    let decorationList = [];
 
-		// Define the decoration type
-		const decorationType = vscode.window.createTextEditorDecorationType({
-			before: {
-				contentText:  "ABC\n\ndef\n\nIJK",
-				color: "#646464",
-				margin: "0px 5px 0px 0px"
-			},
-		});
+    lines.forEach((line) => {
+      let start = new vscode.Position(cursorLine,cursorCharacter);
+      let end = new vscode.Position(cursorLine,cursorCharacter+line.length);
 
-		// Apply the decoration to the editor
-		editor.setDecorations(decorationType, [range]);
+      const range = new vscode.Range(start, end);
+
+      const decorationType = vscode.window.createTextEditorDecorationType({
+        before: {
+          contentText:  line,
+          color: "#646464",
+          margin: "0px 5px 0px 0px"
+        },
+      });
+
+      decorationList.push(decorationType);
+
+      editor.setDecorations(decorationType, [range]);
+      cursorLine++;
+      
+    })
+		
 
 		// Listen for keypress events
 		const disposableListener = vscode.workspace.onDidChangeTextDocument(event => {
-			if (decorationType) {
-				decorationType.dispose();
-			}
+			decorationList.forEach((decorationType) => {
+        decorationType.dispose();
+      });
 			disposableListener.dispose();
       config["currentPrompt"] = JSON.parse(JSON.stringify(config["resetPrompt"]));
       console.log("Text Change, Prompt Resetted. Current Prompt is now:" , config["currentPrompt"]);

@@ -43,6 +43,7 @@ const handleResultEvent = (request, response) => {
 	
 
 	config["currentPrompt"]["token"] += response;
+  
 
 	if (response.includes("<end>")) {
 		showSuggestion(config["currentPrompt"]["token"]);

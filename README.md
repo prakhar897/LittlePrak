@@ -1,18 +1,16 @@
 # LittlePrak
 
-![LittlePrak Logo](/images/littlePrak_logo.png)
-
-[GitHub](https://github.com/prakhar897) [Twitter](https://github.com/prakhar897) [Discord](https://github.com/prakhar897)
+[GitHub](https://github.com/prakhar897/LittlePrak) [Discord](https://github.com/prakhar897)
 
 ## Demo
 
-![Little Prak Logo](/images/littlePrak_logo.png)
+![LittlePrak Demo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.meowingtons.com%2Fblogs%2Flolcats%2F12-perfect-loop-cat-gifs&psig=AOvVaw0BxhefH52gYSRBsXkM-VcI&ust=1695508139077000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCOCytpSiv4EDFQAAAAAdAAAAABAE)
 
 ## Overview
 
-**LittlePrak** is a Visual Studio Code (VS Code) extension designed to enhance your coding experience by providing intelligent autocompletions using Local LLM Models. This extension aims to streamline your coding workflow and boost your productivity by suggesting contextually relevant code snippets, function calls, and variable names as you type.
+**LittlePrak** is a Free and Open Source Local Alternative to Github CoPilot.
 
-Local LLama is an advanced code analysis tool that leverages machine learning techniques to understand the structure and patterns within your codebase. It can accurately predict the next piece of code you are likely to write based on the context you're working in.
+This VSCode Extension is designed to enhance your coding experience by providing intelligent autocompletions using Local LLM Models.
 
 ## Features
 
@@ -20,16 +18,29 @@ Local LLama is an advanced code analysis tool that leverages machine learning te
 
 - **Context-Aware Suggestions**: The autocompletions are contextually aware and take into account the surrounding code, imported libraries, and your coding history. This ensures that the suggestions are accurate and aligned with your coding needs.
 
+- **Suggestion Cycling**: You can cycle through all the suggestions until you find one that's appropriate.
+
 - **Local LLama Integration**: littlePrak harnesses the power of Local LLama's advanced code analysis capabilities. The extension communicates with the Local LLama server running locally to provide real-time autocompletions based on the analysis of your codebase.
+
+- **Remote LLM Integrations**: If you aren't able to run LLMs on your personal PC, you can also host them on a remote server and configure it to be used here.
+
+- **Immense Customisation**: We provide the ability to customize all configurations.
+
+## Prerequisites
+
+1. You must have NodeJS installed in your system.
 
 ## Getting Started
 
 Follow these steps to start using littlePrak with Local LLama:
+ 
+1. Run this command to install dalai `sudo npm install -g dalai`
+2. Run this command to install LLama 7B model: `npx dalai llama install 7B`
+3. Install the littlePrak extension from the VS Code Marketplace.
+4. Open your project and Press (Ctrl+Shift+P) or (Cmd+Shift+P).
+5. Type "Start LittlePrak Server" and hit enter.
+6. You're done.
 
-1. Install the littlePrak extension from the VS Code Marketplace.
-2. Currently the project is only available using the [dalai]() platform. In future, it will support all Llamas.
-3. Install and run dalai server using [these instructions]().
-4. Open your project in VS Code and start coding.
 
 ## Configuration
 

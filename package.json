@@ -1,61 +1,70 @@
 {
-  "name": "littleprak",
-  "displayName": "LittlePrak",
-  "description": "",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.82.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "main": "src/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "littlePrak.startDalai",
-        "title": "Start LittlePrak LLAMA Server"
-      },
-      {
-        "command": "littlePrak.stopDalai",
-        "title": "Stop LittlePrak LLAMA Server"
-      },
-      {
-        "command": "littlePrak.generateSuggestions",
-        "title": "Generate Suggestions"
-      },
-      {
-        "command": "littlePrak.completeSuggestion",
-        "title": "Complete Suggestion"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "littlePrak.completeSuggestion",
-        "key": "tab",
-        "mac": "tab",
-        "when": "editorTextFocus && !editorReadonly"
-      }
-    ]
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "node ./test/runTest.js",
-    "make": "vsce package",
-    "deploy": "vsce publish"
-  },
-  "devDependencies": {
-    "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
-    "@types/vscode": "^1.82.0",
-    "@vscode/test-electron": "^2.3.4",
-    "eslint": "^8.47.0",
-    "glob": "^10.3.3",
-    "mocha": "^10.2.0",
-    "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "socket.io-client": "^4.7.2"
-  }
+	"name": "littleprak",
+	"displayName": "LittlePrak",
+	"publisher": "prakhar897",
+	"description": "LittlePrak is a Free and Open Source Local Alternative to Github CoPilot",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/prakhar897/LittlePrak"
+	},
+	"icon": "./icon.png",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.82.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "littlePrak.startDalai",
+				"title": "Start LittlePrak LLAMA Server"
+			},
+			{
+				"command": "littlePrak.stopDalai",
+				"title": "Stop LittlePrak LLAMA Server"
+			},
+			{
+				"command": "littlePrak.generateSuggestions",
+				"title": "Generate Suggestions"
+			},
+			{
+				"command": "littlePrak.completeSuggestion",
+				"title": "Complete Suggestion"
+			},
+			{
+				"command": "littlePrak.dev",
+				"title": "Little Prak SandBox"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "littlePrak.completeSuggestion",
+				"key": "tab",
+				"mac": "tab",
+				"when": "editorTextFocus && !editorReadonly"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.82.0",
+		"@vscode/test-electron": "^2.3.4",
+		"eslint": "^8.47.0",
+		"glob": "^10.3.3",
+		"mocha": "^10.2.0",
+		"typescript": "^5.1.6"
+	},
+	"dependencies": {
+		"dalai": "^0.3.1",
+		"socket.io-client": "^4.7.2"
+	}
 }
